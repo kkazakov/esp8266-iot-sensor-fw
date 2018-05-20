@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>%TITLE%</title>
+    <link href="/beauter.min.css" rel="stylesheet">
+    <script src="/beauter.min.js"></script>
+    <script src="/custom.js"></script>
+  </head>
+  <body>
+    %NAV%
+
+    <div class="row" style="margin-top: 50px;">
+      <div class="container">
+      	<div class="col m8">
+
+            %WIFI_SAVED%
+
+              <form method="POST" action="wifisave">
+              <fieldset>
+                  <legend>&nbsp;Wireless network:&nbsp;</legend>
+                <div class="row">
+                  <div class="col m12">
+
+                    <label for="n">SSID</label>
+                    <select class="_width100" id="n" name="n">
+                      <option value=""> - select - </option>
+                      %WIFI_LIST%
+                    </select>
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col m12">
+
+                    <label for="p">Password</label>
+                    <input class="_full-width" type="password" placeholder="password" name="p" id="p" value="">
+
+                  </div>
+                </div>
+
+                <input class=" _primary button" type="submit" value="Connect">
+                <input class="button" type="reset" value="Reset">
+                <br>
+              </fieldset>
+              </form>
+
+
+        </div>
+      	<div class="col m6">&nbsp;</div>
+
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<link href="../data/beauter.min.css" rel="stylesheet">
+		<script src="../data/beauter.min.js"></script>
+
+		<script src="../data/custom.js"></script>
+
+	</head>
+
+	<body>
+		<!-- %NAV -->
+		<ul class="topnav" id="myTopnav2">
+			<li><a href="/" class="brand">ESP Sensor</a></li>
+			<li><a href="/">Home</a></li>
+			<li><a href="/wifi" class="active">Wi-Fi</a></li>
+			<li><a href="/osm">OpenSenseMap</a></li>
+			<li style="float:right;"><a href="javascript:askRebootFirmware()" >Restart</a></li>
+			<li class="-icon">
+				<a href="javascript:void(0);" onclick="topnav('myTopnav2')">☰</a>
+			</li>
+
+		</ul>
+
+		<!-- %BODY -->
+
+    <div class="row" style="margin-top: 50px;">
+      <div class="container">
+
+      	<div class="col m8">
+
+              %WIFI_SAVED%
+
+              <form method="POST" action="wifisave">
+              <fieldset>
+                  <legend>&nbsp;Wireless network:&nbsp;</legend>
+                <div class="row">
+                  <div class="col m12">
+
+                    <label for="n">SSID</label>
+                    <select class="_width100" id="n" name="n">
+                      <option value=""> - select - </option>
+                      <option value="Some network 1">Some network 1</option>
+                      <option value="Some network 2">Some network 2</option>
+                    </select>
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col m12">
+
+                    <label for="p">Password</label>
+                    <input class="_full-width" type="password" placeholder="password" name="p" id="p">
+
+                  </div>
+                </div>
+
+                <input class=" _primary button" type="submit" value="Connect">
+                <input class="button" type="reset" value="Reset">
+                <br>
+              </fieldset>
+              </form>
+
+
+        </div>
+      	<div class="col m6">&nbsp;</div>
+
+      </div>
+    </div>
+
+</body>
+
+</html>

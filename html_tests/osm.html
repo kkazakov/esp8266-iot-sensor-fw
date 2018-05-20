@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<link href="../data/beauter.min.css" rel="stylesheet">
+		<script src="../data/beauter.min.js"></script>
+
+		<script src="../data/custom.js"></script>
+
+	</head>
+
+	<body>
+		<!-- %NAV -->
+		<ul class="topnav" id="myTopnav2">
+			<li><a href="/" class="brand">ESP Sensor</a></li>
+			<li><a href="/">Home</a></li>
+			<li><a href="/wifi" class="active">Wi-Fi</a></li>
+			<li><a href="/osm">OpenSenseMap</a></li>
+			<li style="float:right;"><a href="javascript:askRebootFirmware()" >Restart</a></li>
+			<li class="-icon">
+				<a href="javascript:void(0);" onclick="topnav('myTopnav2')">☰</a>
+			</li>
+
+		</ul>
+
+		<!-- %BODY -->
+
+    <div class="row" style="margin-top: 50px;">
+      <div class="container">
+
+      	<div class="col m8">
+
+              %CONFIG_SAVED%
+
+              <form method="POST" action="osmsave">
+              <fieldset>
+                <legend>&nbsp;OpenSenseMap configuration:&nbsp;</legend>
+
+                <div class="row">
+                  <div class="col m12">
+
+                    <label for="b">senseBox ID</label>
+                    <input class="_full-width" type="text" placeholder="" name="b" id="b">
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col m12">
+
+                    <label for="t">Temperature Sensor Id</label>
+                    <input class="_full-width" type="text" placeholder="" name="t" id="t">
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col m12">
+
+                    <label for="h">Humidity Sensor Id</label>
+                    <input class="_full-width" type="text" placeholder="" name="h" id="h">
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col m12">
+
+                    <label for="p">Pressure Sensor Id</label>
+                    <input class="_full-width" type="text" placeholder="" name="p" id="p">
+
+                  </div>
+                </div>
+
+                <input class=" _primary button" type="submit" value="Save configuration">
+                <br>
+              </fieldset>
+              </form>
+
+
+        </div>
+      	<div class="col m6">&nbsp;</div>
+
+      </div>
+    </div>
+
+</body>
+
+</html>
