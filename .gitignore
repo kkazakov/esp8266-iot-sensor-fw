@@ -3,3 +3,4 @@
 .clang_complete
 .gcc-flags.json
 cmake-build-debug
+.travis.yml
