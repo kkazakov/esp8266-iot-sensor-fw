@@ -193,6 +193,7 @@ String wifiProcessor(const String& key) {
 }
 
 void handleWifi() {
+  loadCredentials();
   if (!ESPTemplateProcessor(webServer).send(String("/wifi.html"), wifiProcessor)) {
     webServer.send(200, "text/plain", "page not found.");
   }
@@ -236,6 +237,7 @@ String osmProcessor(const String& key) {
 }
 
 void handleOSM() {
+  loadOpenSenseMapSettings();
   if (!ESPTemplateProcessor(webServer).send(String("/osm.html"), osmProcessor)) {
     webServer.send(200, "text/plain", "page not found.");
   }

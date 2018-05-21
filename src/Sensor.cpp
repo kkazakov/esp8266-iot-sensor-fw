@@ -14,6 +14,8 @@ boolean hasSensor = true;
 // set this (via setting or here to sleep mode = true in order to deep sleep)
 boolean sleepMode = true;
 
+boolean shouldStartWebServer = false; // do not modify it, will be set in code
+
 long lastConnectTry = 0;
 
 int status = WL_IDLE_STATUS;
@@ -37,10 +39,21 @@ void setup () {
   Serial.println();
   Serial.println(FW_VERSION);
 
+  SPIFFS.begin();
+  /*
+  Dir dir = SPIFFS.openDir("/");
+  while (dir.next()) {
+    String fileName = dir.fileName();
+    size_t fileSize = dir.fileSize();
+    Serial.printf("FS File: %s, size: %s\n", fileName.c_str(), String(fileSize).c_str());
+  }
+  Serial.println();
+  */
+  Wire.begin(2, 0);
 
   pinMode(CLR_BTN, INPUT);
-
   delay(100);
+
 
   if (digitalRead(CLR_BTN) == LOW) {
     Serial.println("CLR PRESSED!!!");
@@ -50,12 +63,10 @@ void setup () {
     delay(5000);
     // depressed within 5 seconds? start web server
     if (digitalRead(CLR_BTN) == HIGH) {
-        startWebServer();
-        return;
-    }
+        shouldStartWebServer = true;
+    } else {
 
     // still low after 5 seconds? reset wifi + check for more
-    if (digitalRead(CLR_BTN) == LOW) {
 
       // reset wifi settings
       Serial.println("resetting wi-fi settings ...");
@@ -83,21 +94,6 @@ void setup () {
 
   }
 
-/*
-  if (!sleepMode) {
-      SPIFFS.begin();
-      Dir dir = SPIFFS.openDir("/");
-      while (dir.next()) {
-        String fileName = dir.fileName();
-        size_t fileSize = dir.fileSize();
-        Serial.printf("FS File: %s, size: %s\n", fileName.c_str(), String(fileSize).c_str());
-      }
-      Serial.println();
-  }
-*/
-
-  Wire.begin(2, 0);
-  delay(20);
 
   #if HAS_BME280
     if (!bme.begin(BME280_ADDRESS, &Wire)) {
@@ -120,6 +116,11 @@ void setup () {
   connect = hasSSIDConfigured();
 
   loadOpenSenseMapSettings();
+
+  if (shouldStartWebServer) {
+    startWebServer();
+  }
+
 
   passed_millis = millis();
 }

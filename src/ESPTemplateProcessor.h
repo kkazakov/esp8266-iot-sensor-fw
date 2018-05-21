@@ -23,7 +23,7 @@ class ESPTemplateProcessor {
     {
     }
 
-    bool send(const String& filePath, ProcessorCallback& processor, char bookend = '%', bool silentSerial = true)
+    bool send(const String& filePath, ProcessorCallback& processor, char bookend = '%', bool silentSerial = false)
     {
       // Open file.
       if(!SPIFFS.exists(filePath)) {
