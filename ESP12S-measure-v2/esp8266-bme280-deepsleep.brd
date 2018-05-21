@@ -1671,23 +1671,29 @@ Es handelt sich hierbei um AK500 in horizontaler Ausführung.</description>
 </package>
 </packages>
 </library>
-<library name="B3U-1000P">
+<library name="SMD-SWITCH-1">
 <packages>
-<package name="SW_B3U-1000P">
-<wire x1="1.5" y1="1.25" x2="-1.5" y2="1.25" width="0.127" layer="21"/>
-<wire x1="-1.5" y1="1.25" x2="-1.5" y2="-1.25" width="0.127" layer="51"/>
-<wire x1="-1.5" y1="-1.25" x2="1.5" y2="-1.25" width="0.127" layer="21"/>
-<wire x1="1.5" y1="-1.25" x2="1.5" y2="1.25" width="0.127" layer="51"/>
-<circle x="-2" y="1.2" radius="0.127" width="0" layer="21"/>
-<wire x1="2.5" y1="-1.45" x2="-2.5" y2="-1.45" width="0.127" layer="39"/>
+<package name="SWCH-SMD-1">
+<wire x1="2.008" y1="0.742" x2="-0.992" y2="0.742" width="0.127" layer="21"/>
+<wire x1="-0.992" y1="0.742" x2="-0.992" y2="-0.742" width="0.127" layer="51"/>
+<wire x1="-0.992" y1="-0.742" x2="2.008" y2="-0.742" width="0.127" layer="21"/>
+<wire x1="2.008" y1="-0.742" x2="2.008" y2="0.742" width="0.127" layer="51"/>
+<wire x1="3.516" y1="-1.45" x2="-2.5" y2="-1.45" width="0.127" layer="39"/>
 <wire x1="-2.5" y1="-1.45" x2="-2.5" y2="1.5" width="0.127" layer="39"/>
-<wire x1="-2.5" y1="1.5" x2="2.5" y2="1.5" width="0.127" layer="39"/>
-<wire x1="2.5" y1="1.5" x2="2.5" y2="-1.45" width="0.127" layer="39"/>
+<wire x1="-2.5" y1="1.5" x2="3.516" y2="1.5" width="0.127" layer="39"/>
+<wire x1="3.516" y1="1.5" x2="3.516" y2="-1.45" width="0.127" layer="39"/>
 <text x="-2.60836875" y="1.60515" size="0.815415625" layer="25">&gt;NAME</text>
 <text x="-2.601509375" y="-2.45143125" size="0.813271875" layer="27">&gt;VALUE</text>
-<circle x="0" y="0" radius="0.75" width="0.127" layer="21"/>
-<smd name="2" x="1.7" y="0" dx="0.8" dy="1.7" layer="1" rot="R180"/>
-<smd name="1" x="-1.7" y="0" dx="0.8" dy="1.7" layer="1" rot="R180"/>
+<smd name="2" x="4.24" y="0" dx="1.524" dy="1.524" layer="1" rot="R180"/>
+<smd name="1" x="-3.224" y="0" dx="1.524" dy="1.524" layer="1" rot="R180"/>
+<wire x1="3.326" y1="0.742" x2="3.326" y2="-0.742" width="0.127" layer="51"/>
+<wire x1="-2.262" y1="0.742" x2="-2.262" y2="-0.742" width="0.127" layer="51"/>
+<wire x1="-1.5" y1="0.742" x2="-1.5" y2="-0.742" width="0.127" layer="51"/>
+<wire x1="2.564" y1="0.742" x2="2.564" y2="-0.742" width="0.127" layer="51"/>
+<wire x1="3.278" y1="0.742" x2="2.564" y2="0.742" width="0.127" layer="21"/>
+<wire x1="3.278" y1="-0.782" x2="2.564" y2="-0.782" width="0.127" layer="21"/>
+<wire x1="-1.548" y1="0.742" x2="-2.262" y2="0.742" width="0.127" layer="21"/>
+<wire x1="-1.548" y1="-0.782" x2="-2.262" y2="-0.782" width="0.127" layer="21"/>
 </package>
 </packages>
 </library>
@@ -1893,7 +1899,7 @@ design rules under a new name.</description>
 <element name="R2" library="resistor" library_urn="urn:adsk.eagle:library:348" package="0204/7" package3d_urn="urn:adsk.eagle:package:25945/1" value="10k" x="36.195" y="49.53"/>
 <element name="R3" library="resistor" library_urn="urn:adsk.eagle:library:348" package="0204/7" package3d_urn="urn:adsk.eagle:package:25945/1" value="10k" x="22.86" y="11.43"/>
 <element name="R4" library="resistor" library_urn="urn:adsk.eagle:library:348" package="0204/7" package3d_urn="urn:adsk.eagle:package:25945/1" value="10k" x="22.86" y="15.6845" rot="R180"/>
-<element name="R5" library="resistor" library_urn="urn:adsk.eagle:library:348" package="0204/7" package3d_urn="urn:adsk.eagle:package:25945/1" value="10k" x="22.86" y="19.3675"/>
+<element name="R5" library="resistor" library_urn="urn:adsk.eagle:library:348" package="0204/7" package3d_urn="urn:adsk.eagle:package:25945/1" value="10k" x="24.4475" y="25.4" rot="R90"/>
 <element name="BAT-CH" library="diy-modules" package="BATTERY-CHARGER-LI-PROT" value="BATTERY-CHARGER-LI-PROT" x="27.94" y="68.170728125" smashed="yes" rot="R270">
 <attribute name="NAME" x="31.75" y="69.440728125" size="1.27" layer="25" rot="R270" align="bottom-center"/>
 </element>
@@ -1925,35 +1931,35 @@ design rules under a new name.</description>
 <attribute name="PACKAGE" value="SO-16 Nexperia" x="21.9075" y="35.56" size="1.778" layer="27" display="off"/>
 <attribute name="PRICE" value="0.16 USD" x="21.9075" y="35.56" size="1.778" layer="27" display="off"/>
 </element>
-<element name="FLASH" library="B3U-1000P" package="SW_B3U-1000P" value="B3U-1000P" x="32.385" y="18.7325" smashed="yes">
-<attribute name="AVAILABILITY" value="Good" x="32.385" y="18.7325" size="1.778" layer="27" display="off"/>
-<attribute name="DESCRIPTION" value=" Switch Tactile N.O. SPST Round Button Gull Wing 0.05A 12VDC 1.5N SMD Embossed T/R " x="32.385" y="18.7325" size="1.778" layer="27" display="off"/>
-<attribute name="MF" value="Omron" x="32.385" y="18.7325" size="1.778" layer="27" display="off"/>
-<attribute name="MP" value="B3U-1000P" x="32.385" y="18.7325" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="30.72913125" y="15.89265" size="0.815415625" layer="25"/>
-<attribute name="PACKAGE" value="None" x="32.385" y="18.7325" size="1.778" layer="27" display="off"/>
-<attribute name="PRICE" value="0.67 USD" x="32.385" y="18.7325" size="1.778" layer="27" display="off"/>
-<attribute name="VALUE" x="29.783490625" y="16.28106875" size="0.813271875" layer="27"/>
+<element name="FLASH" library="SMD-SWITCH-1" package="SWCH-SMD-1" value="SWCH-SMD-1" x="29.845" y="18.7325" smashed="yes">
+<attribute name="AVAILABILITY" value="Good" x="29.845" y="18.7325" size="1.778" layer="27" display="off"/>
+<attribute name="DESCRIPTION" value=" Switch Tactile N.O. SPST Round Button Gull Wing 0.05A 12VDC 1.5N SMD Embossed T/R " x="29.845" y="18.7325" size="1.778" layer="27" display="off"/>
+<attribute name="MF" value="Omron" x="29.845" y="18.7325" size="1.778" layer="27" display="off"/>
+<attribute name="MP" value="B3U-1000P" x="29.845" y="18.7325" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="28.18913125" y="15.89265" size="0.815415625" layer="25"/>
+<attribute name="PACKAGE" value="None" x="29.845" y="18.7325" size="1.778" layer="27" display="off"/>
+<attribute name="PRICE" value="0.67 USD" x="29.845" y="18.7325" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="27.243490625" y="16.28106875" size="0.813271875" layer="27"/>
 </element>
-<element name="CLEAR" library="B3U-1000P" package="SW_B3U-1000P" value="B3U-1000P" x="38.4175" y="18.7325" smashed="yes">
-<attribute name="AVAILABILITY" value="Good" x="38.4175" y="18.7325" size="1.778" layer="27" display="off"/>
-<attribute name="DESCRIPTION" value=" Switch Tactile N.O. SPST Round Button Gull Wing 0.05A 12VDC 1.5N SMD Embossed T/R " x="38.4175" y="18.7325" size="1.778" layer="27" display="off"/>
-<attribute name="MF" value="Omron" x="38.4175" y="18.7325" size="1.778" layer="27" display="off"/>
-<attribute name="MP" value="B3U-1000P" x="38.4175" y="18.7325" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="36.76163125" y="15.89265" size="0.815415625" layer="25"/>
-<attribute name="PACKAGE" value="None" x="38.4175" y="18.7325" size="1.778" layer="27" display="off"/>
-<attribute name="PRICE" value="0.67 USD" x="38.4175" y="18.7325" size="1.778" layer="27" display="off"/>
-<attribute name="VALUE" x="35.815990625" y="16.28106875" size="0.813271875" layer="27"/>
+<element name="CLEAR" library="SMD-SWITCH-1" package="SWCH-SMD-1" value="SWCH-SMD-1" x="40.005" y="18.7325" smashed="yes">
+<attribute name="AVAILABILITY" value="Good" x="40.005" y="18.7325" size="1.778" layer="27" display="off"/>
+<attribute name="DESCRIPTION" value=" Switch Tactile N.O. SPST Round Button Gull Wing 0.05A 12VDC 1.5N SMD Embossed T/R " x="40.005" y="18.7325" size="1.778" layer="27" display="off"/>
+<attribute name="MF" value="Omron" x="40.005" y="18.7325" size="1.778" layer="27" display="off"/>
+<attribute name="MP" value="B3U-1000P" x="40.005" y="18.7325" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="38.34913125" y="15.89265" size="0.815415625" layer="25"/>
+<attribute name="PACKAGE" value="None" x="40.005" y="18.7325" size="1.778" layer="27" display="off"/>
+<attribute name="PRICE" value="0.67 USD" x="40.005" y="18.7325" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="37.403490625" y="16.28106875" size="0.813271875" layer="27"/>
 </element>
-<element name="RESET" library="B3U-1000P" package="SW_B3U-1000P" value="B3U-1000P" x="48.5775" y="44.1325" smashed="yes">
-<attribute name="AVAILABILITY" value="Good" x="48.5775" y="44.1325" size="1.778" layer="27" display="off"/>
-<attribute name="DESCRIPTION" value=" Switch Tactile N.O. SPST Round Button Gull Wing 0.05A 12VDC 1.5N SMD Embossed T/R " x="48.5775" y="44.1325" size="1.778" layer="27" display="off"/>
-<attribute name="MF" value="Omron" x="48.5775" y="44.1325" size="1.778" layer="27" display="off"/>
-<attribute name="MP" value="B3U-1000P" x="48.5775" y="44.1325" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="46.92163125" y="41.29265" size="0.815415625" layer="25"/>
-<attribute name="PACKAGE" value="None" x="48.5775" y="44.1325" size="1.778" layer="27" display="off"/>
-<attribute name="PRICE" value="0.67 USD" x="48.5775" y="44.1325" size="1.778" layer="27" display="off"/>
-<attribute name="VALUE" x="45.975990625" y="41.68106875" size="0.813271875" layer="27"/>
+<element name="RESET" library="SMD-SWITCH-1" package="SWCH-SMD-1" value="SWCH-SMD-1" x="45.72" y="44.7675" smashed="yes">
+<attribute name="AVAILABILITY" value="Good" x="45.72" y="44.7675" size="1.778" layer="27" display="off"/>
+<attribute name="DESCRIPTION" value=" Switch Tactile N.O. SPST Round Button Gull Wing 0.05A 12VDC 1.5N SMD Embossed T/R " x="45.72" y="44.7675" size="1.778" layer="27" display="off"/>
+<attribute name="MF" value="Omron" x="45.72" y="44.7675" size="1.778" layer="27" display="off"/>
+<attribute name="MP" value="B3U-1000P" x="45.72" y="44.7675" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="44.06413125" y="41.92765" size="0.815415625" layer="25"/>
+<attribute name="PACKAGE" value="None" x="45.72" y="44.7675" size="1.778" layer="27" display="off"/>
+<attribute name="PRICE" value="0.67 USD" x="45.72" y="44.7675" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="43.118490625" y="42.31606875" size="0.813271875" layer="27"/>
 </element>
 <element name="AN1" library="con-lstb" library_urn="urn:adsk.eagle:library:162" package="MA03-1" package3d_urn="urn:adsk.eagle:package:8339/1" value="" x="14.605" y="49.2125" rot="R270">
 <attribute name="MF" value="" x="14.605" y="49.2125" size="1.778" layer="27" rot="R270" display="off"/>
@@ -1986,7 +1992,7 @@ design rules under a new name.</description>
 <contactref element="R1" pad="1"/>
 <contactref element="ESP1" pad="12"/>
 <contactref element="RESET" pad="2"/>
-<wire x1="50.2775" y1="44.1325" x2="46.15" y2="40.005" width="0.2032" layer="1"/>
+<wire x1="49.96" y1="44.7675" x2="46.15" y2="40.005" width="0.2032" layer="1"/>
 <wire x1="46.15" y1="40.005" x2="43.4975" y2="40.005" width="0.2032" layer="1"/>
 <wire x1="43.4975" y1="40.005" x2="43.305" y2="40.005" width="0.2032" layer="1"/>
 <wire x1="43.4975" y1="40.9575" x2="43.4975" y2="40.005" width="0.2032" layer="1"/>
@@ -1995,8 +2001,9 @@ design rules under a new name.</description>
 <wire x1="38.1" y1="37.7825" x2="37.305" y2="38.5775" width="0.3048" layer="1"/>
 <wire x1="37.305" y1="38.5775" x2="37.305" y2="40.005" width="0.3048" layer="1"/>
 <wire x1="42.545" y1="37.7825" x2="38.1" y2="37.7825" width="0.3048" layer="1"/>
-<wire x1="50.2775" y1="44.1325" x2="50.2775" y2="49.4175" width="0.3048" layer="1"/>
 <wire x1="50.2775" y1="49.4175" x2="50.165" y2="49.53" width="0.3048" layer="1"/>
+<wire x1="49.96" y1="44.7675" x2="49.96" y2="49.1" width="0.2032" layer="1"/>
+<wire x1="49.96" y1="49.1" x2="50.2775" y2="49.4175" width="0.2032" layer="1"/>
 </signal>
 <signal name="N$2">
 <contactref element="R2" pad="1"/>
@@ -2107,46 +2114,41 @@ design rules under a new name.</description>
 <wire x1="24.4983" y1="31.115" x2="28.575" y2="31.115" width="0.3048" layer="1"/>
 <wire x1="29.305" y1="30.385" x2="29.305" y2="23.805" width="0.3048" layer="1"/>
 <wire x1="28.575" y1="31.115" x2="29.305" y2="30.385" width="0.3048" layer="1"/>
-<wire x1="14.605" y1="15.24" x2="18.7325" y2="19.3675" width="0.3048" layer="1"/>
-<wire x1="18.7325" y1="19.3675" x2="19.05" y2="19.3675" width="0.3048" layer="1"/>
 <wire x1="19.3167" y1="33.655" x2="15.875" y2="33.655" width="0.3048" layer="1"/>
 <wire x1="15.875" y1="33.655" x2="14.605" y2="34.925" width="0.3048" layer="1"/>
 <wire x1="14.605" y1="34.925" x2="14.605" y2="35.8775" width="0.3048" layer="1"/>
-<wire x1="47.3075" y1="13.0175" x2="39.0525" y2="21.2725" width="0.3048" layer="16"/>
+<wire x1="39.0525" y1="21.2725" x2="47.3075" y2="13.0175" width="0.3048" layer="16"/>
 <via x="27.94" y="21.2725" extent="1-16" drill="0.35"/>
-<wire x1="39.0525" y1="21.2725" x2="36.83" y2="21.2725" width="0.3048" layer="16"/>
-<wire x1="36.83" y1="21.2725" x2="31.4325" y2="21.2725" width="0.3048" layer="16"/>
-<wire x1="31.4325" y1="21.2725" x2="27.94" y2="21.2725" width="0.3048" layer="16"/>
-<wire x1="46.8775" y1="44.1325" x2="46.0375" y2="44.1325" width="0.3048" layer="1"/>
-<wire x1="46.0375" y1="44.1325" x2="45.085" y2="45.085" width="0.3048" layer="1"/>
-<wire x1="45.085" y1="45.085" x2="45.085" y2="46.99" width="0.3048" layer="1"/>
-<wire x1="45.085" y1="46.99" x2="44.45" y2="47.625" width="0.3048" layer="1"/>
-<wire x1="44.45" y1="47.625" x2="25.7175" y2="47.625" width="0.3048" layer="1"/>
 <wire x1="25.7175" y1="47.625" x2="25.4" y2="47.9425" width="0.3048" layer="1"/>
 <wire x1="25.4" y1="47.9425" x2="25.4" y2="49.2125" width="0.3048" layer="1"/>
 <wire x1="14.605" y1="46.6725" x2="18.0975" y2="46.6725" width="0.3048" layer="1"/>
 <wire x1="18.0975" y1="46.6725" x2="21.11375" y2="49.68875" width="0.3048" layer="1"/>
-<wire x1="36.7175" y1="18.7325" x2="36.7175" y2="21.16" width="0.2032" layer="1"/>
-<wire x1="36.7175" y1="21.16" x2="36.83" y2="21.2725" width="0.2032" layer="1"/>
 <via x="36.83" y="21.2725" extent="1-16" drill="0.35"/>
-<wire x1="30.685" y1="18.7325" x2="31.4325" y2="19.48" width="0.2032" layer="1"/>
-<wire x1="31.4325" y1="19.48" x2="31.4325" y2="21.2725" width="0.2032" layer="1"/>
-<via x="31.4325" y="21.2725" extent="1-16" drill="0.35"/>
 <wire x1="29.21" y1="23.71" x2="29.305" y2="23.805" width="0.3048" layer="1"/>
-<wire x1="27.94" y1="21.2725" x2="27.94" y2="22.44" width="0.3048" layer="1"/>
+<wire x1="27.94" y1="21.2725" x2="27.94" y2="21.59" width="0.3048" layer="1"/>
+<wire x1="27.94" y1="21.59" x2="27.94" y2="22.44" width="0.3048" layer="1"/>
 <wire x1="27.94" y1="22.44" x2="29.305" y2="23.805" width="0.3048" layer="1"/>
+<wire x1="42.496" y1="44.7675" x2="42.496" y2="46.0865" width="0.3048" layer="1"/>
+<wire x1="42.496" y1="46.0865" x2="40.9575" y2="47.625" width="0.3048" layer="1"/>
+<wire x1="40.9575" y1="47.625" x2="25.7175" y2="47.625" width="0.3048" layer="1"/>
+<wire x1="24.4475" y1="21.59" x2="26.67" y2="21.59" width="0.3048" layer="1"/>
+<wire x1="26.67" y1="21.59" x2="27.94" y2="21.59" width="0.3048" layer="1"/>
+<wire x1="26.621" y1="18.7325" x2="26.621" y2="21.541" width="0.3048" layer="1"/>
+<wire x1="26.621" y1="21.541" x2="26.67" y2="21.59" width="0.3048" layer="1"/>
+<wire x1="27.94" y1="21.2725" x2="36.83" y2="21.2725" width="0.3048" layer="16"/>
+<wire x1="36.83" y1="21.2725" x2="39.0525" y2="21.2725" width="0.3048" layer="16"/>
+<wire x1="36.781" y1="18.7325" x2="36.83" y2="18.7815" width="0.3048" layer="1"/>
+<wire x1="36.83" y1="18.7815" x2="36.83" y2="21.2725" width="0.3048" layer="1"/>
 </signal>
 <signal name="SDA">
 <contactref element="BME280" pad="4"/>
 <contactref element="R4" pad="1"/>
 <contactref element="ESP1" pad="3"/>
 <wire x1="31.623" y1="9.525" x2="31.623" y2="10.922" width="0.3048" layer="16"/>
-<wire x1="33.305" y1="23.805" x2="33.305" y2="18.7" width="0.2032" layer="1"/>
-<wire x1="33.305" y1="18.7" x2="30.1625" y2="15.5575" width="0.2032" layer="1"/>
-<wire x1="30.1625" y1="15.5575" x2="29.718" y2="15.367" width="0.2032" layer="1"/>
-<wire x1="29.718" y1="15.367" x2="26.67" y2="15.6845" width="0.2032" layer="1"/>
 <wire x1="26.8605" y1="15.6845" x2="26.67" y2="15.6845" width="0.3048" layer="16"/>
 <wire x1="31.623" y1="10.922" x2="26.8605" y2="15.6845" width="0.3048" layer="16"/>
+<wire x1="26.67" y1="15.6845" x2="33.305" y2="22.3195" width="0.3048" layer="1"/>
+<wire x1="33.305" y1="22.3195" x2="33.305" y2="23.805" width="0.3048" layer="1"/>
 </signal>
 <signal name="SCL">
 <contactref element="BME280" pad="3"/>
@@ -2166,9 +2168,10 @@ design rules under a new name.</description>
 <signal name="N$8">
 <contactref element="ESP1" pad="2"/>
 <contactref element="R5" pad="2"/>
-<wire x1="31.305" y1="23.805" x2="31.305" y2="22.415" width="0.3048" layer="1"/>
-<wire x1="31.305" y1="22.415" x2="28.2575" y2="19.3675" width="0.3048" layer="1"/>
-<wire x1="28.2575" y1="19.3675" x2="26.67" y2="19.3675" width="0.3048" layer="1"/>
+<wire x1="31.305" y1="23.805" x2="31.4325" y2="23.9325" width="0.3048" layer="1"/>
+<wire x1="31.4325" y1="23.9325" x2="31.4325" y2="29.21" width="0.3048" layer="1"/>
+<via x="31.4325" y="29.21" extent="1-16" drill="0.35"/>
+<wire x1="31.4325" y1="29.21" x2="24.4475" y2="29.21" width="0.3048" layer="16"/>
 </signal>
 <signal name="TX">
 <contactref element="ESP1" pad="8"/>
@@ -2181,19 +2184,19 @@ design rules under a new name.</description>
 <contactref element="ESP1" pad="6"/>
 <contactref element="R6" pad="2"/>
 <contactref element="CLEAR" pad="2"/>
-<wire x1="39.305" y1="23.805" x2="40.1175" y2="22.9925" width="0.3048" layer="1"/>
-<wire x1="40.1175" y1="22.9925" x2="40.1175" y2="18.7325" width="0.3048" layer="1"/>
-<wire x1="26.67" y1="7.62" x2="34.925" y2="15.875" width="0.2032" layer="1"/>
-<wire x1="40.1175" y1="16.94" x2="40.1175" y2="18.7325" width="0.2032" layer="1"/>
-<wire x1="34.925" y1="15.875" x2="39.0525" y2="15.875" width="0.2032" layer="1"/>
-<wire x1="39.0525" y1="15.875" x2="40.1175" y2="16.94" width="0.2032" layer="1"/>
+<wire x1="44.245" y1="18.7325" x2="42.34" y2="16.51" width="0.2032" layer="1"/>
+<wire x1="42.34" y1="16.51" x2="35.56" y2="16.51" width="0.2032" layer="1"/>
+<wire x1="35.56" y1="16.51" x2="26.67" y2="7.62" width="0.2032" layer="1"/>
+<wire x1="39.305" y1="23.805" x2="39.37" y2="23.74" width="0.2032" layer="1"/>
+<wire x1="39.37" y1="23.74" x2="39.37" y2="22.225" width="0.2032" layer="1"/>
+<wire x1="39.37" y1="22.225" x2="42.8625" y2="18.7325" width="0.2032" layer="1"/>
+<wire x1="42.8625" y1="18.7325" x2="44.245" y2="18.7325" width="0.2032" layer="1"/>
 </signal>
 <signal name="RX">
 <contactref element="PROGRAM" pad="2"/>
 <contactref element="ESP1" pad="7"/>
-<wire x1="44.45" y1="18.0975" x2="47.3075" y2="18.0975" width="0.3048" layer="1"/>
-<wire x1="41.305" y1="23.805" x2="41.305" y2="21.2425" width="0.3048" layer="1"/>
-<wire x1="41.305" y1="21.2425" x2="44.45" y2="18.0975" width="0.3048" layer="1"/>
+<wire x1="41.305" y1="23.805" x2="47.0125" y2="18.0975" width="0.2032" layer="1"/>
+<wire x1="47.0125" y1="18.0975" x2="47.3075" y2="18.0975" width="0.2032" layer="1"/>
 </signal>
 <signal name="N$6">
 <contactref element="BAT-CH" pad="IN+"/>

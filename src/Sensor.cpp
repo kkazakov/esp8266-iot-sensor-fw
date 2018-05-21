@@ -184,10 +184,19 @@ WL_DISCONNECTED = 6
         }
 */
       } else if (s == WL_NO_SSID_AVAIL) {
+
+        // if we cannot find the SSID, go to deep sleep.
+        // perhaps the SSID is not available at the moment, but will become
+        // available later. Prev code started the Soft AP, but we don't want
+        // this, as there's no going out of this mode and drains the battery.
+        deepsleep(postingInterval * 1000);
+
+        /*
         WiFi.disconnect();
         connect = false;
         startSoftAp();
         startWebServer();
+        */
       }
     }
 

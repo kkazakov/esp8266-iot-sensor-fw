@@ -6713,27 +6713,33 @@ Es handelt sich hierbei um AK500 in horizontaler Ausführung.</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="B3U-1000P">
+<library name="SMD-SWITCH-1">
 <packages>
-<package name="SW_B3U-1000P">
-<wire x1="1.5" y1="1.25" x2="-1.5" y2="1.25" width="0.127" layer="21"/>
-<wire x1="-1.5" y1="1.25" x2="-1.5" y2="-1.25" width="0.127" layer="51"/>
-<wire x1="-1.5" y1="-1.25" x2="1.5" y2="-1.25" width="0.127" layer="21"/>
-<wire x1="1.5" y1="-1.25" x2="1.5" y2="1.25" width="0.127" layer="51"/>
-<circle x="-2" y="1.2" radius="0.127" width="0" layer="21"/>
-<wire x1="2.5" y1="-1.45" x2="-2.5" y2="-1.45" width="0.127" layer="39"/>
+<package name="SWCH-SMD-1">
+<wire x1="2.008" y1="0.742" x2="-0.992" y2="0.742" width="0.127" layer="21"/>
+<wire x1="-0.992" y1="0.742" x2="-0.992" y2="-0.742" width="0.127" layer="51"/>
+<wire x1="-0.992" y1="-0.742" x2="2.008" y2="-0.742" width="0.127" layer="21"/>
+<wire x1="2.008" y1="-0.742" x2="2.008" y2="0.742" width="0.127" layer="51"/>
+<wire x1="3.516" y1="-1.45" x2="-2.5" y2="-1.45" width="0.127" layer="39"/>
 <wire x1="-2.5" y1="-1.45" x2="-2.5" y2="1.5" width="0.127" layer="39"/>
-<wire x1="-2.5" y1="1.5" x2="2.5" y2="1.5" width="0.127" layer="39"/>
-<wire x1="2.5" y1="1.5" x2="2.5" y2="-1.45" width="0.127" layer="39"/>
+<wire x1="-2.5" y1="1.5" x2="3.516" y2="1.5" width="0.127" layer="39"/>
+<wire x1="3.516" y1="1.5" x2="3.516" y2="-1.45" width="0.127" layer="39"/>
 <text x="-2.60836875" y="1.60515" size="0.815415625" layer="25">&gt;NAME</text>
 <text x="-2.601509375" y="-2.45143125" size="0.813271875" layer="27">&gt;VALUE</text>
-<circle x="0" y="0" radius="0.75" width="0.127" layer="21"/>
-<smd name="2" x="1.7" y="0" dx="0.8" dy="1.7" layer="1" rot="R180"/>
-<smd name="1" x="-1.7" y="0" dx="0.8" dy="1.7" layer="1" rot="R180"/>
+<smd name="2" x="4.24" y="0" dx="1.524" dy="1.524" layer="1" rot="R180"/>
+<smd name="1" x="-3.224" y="0" dx="1.524" dy="1.524" layer="1" rot="R180"/>
+<wire x1="3.326" y1="0.742" x2="3.326" y2="-0.742" width="0.127" layer="51"/>
+<wire x1="-2.262" y1="0.742" x2="-2.262" y2="-0.742" width="0.127" layer="51"/>
+<wire x1="-1.5" y1="0.742" x2="-1.5" y2="-0.742" width="0.127" layer="51"/>
+<wire x1="2.564" y1="0.742" x2="2.564" y2="-0.742" width="0.127" layer="51"/>
+<wire x1="3.278" y1="0.742" x2="2.564" y2="0.742" width="0.127" layer="21"/>
+<wire x1="3.278" y1="-0.782" x2="2.564" y2="-0.782" width="0.127" layer="21"/>
+<wire x1="-1.548" y1="0.742" x2="-2.262" y2="0.742" width="0.127" layer="21"/>
+<wire x1="-1.548" y1="-0.782" x2="-2.262" y2="-0.782" width="0.127" layer="21"/>
 </package>
 </packages>
 <symbols>
-<symbol name="B3U-1000P">
+<symbol name="SWCH-SMD-1">
 <wire x1="-7.62" y1="5.08" x2="-7.62" y2="0" width="0.254" layer="94"/>
 <wire x1="-7.62" y1="0" x2="-7.62" y2="-5.08" width="0.254" layer="94"/>
 <wire x1="-7.62" y1="-5.08" x2="7.62" y2="-5.08" width="0.254" layer="94"/>
@@ -6752,13 +6758,13 @@ Es handelt sich hierbei um AK500 in horizontaler Ausführung.</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="B3U-1000P" prefix="S">
+<deviceset name="SWCH-SMD-1" prefix="S">
 <description>Switch Tactile N.O. SPST Round Button Gull Wing 0.05A 12VDC 1.5N SMD Embossed T/R</description>
 <gates>
-<gate name="G$1" symbol="B3U-1000P" x="0" y="0"/>
+<gate name="G$1" symbol="SWCH-SMD-1" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="SW_B3U-1000P">
+<device name="" package="SWCH-SMD-1">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
@@ -6820,9 +6826,9 @@ Es handelt sich hierbei um AK500 in horizontaler Ausführung.</description>
 <part name="GND9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SUPPLY8" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="GND10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="FLASH" library="B3U-1000P" deviceset="B3U-1000P" device=""/>
-<part name="CLEAR" library="B3U-1000P" deviceset="B3U-1000P" device=""/>
-<part name="RESET" library="B3U-1000P" deviceset="B3U-1000P" device=""/>
+<part name="FLASH" library="SMD-SWITCH-1" deviceset="SWCH-SMD-1" device=""/>
+<part name="CLEAR" library="SMD-SWITCH-1" deviceset="SWCH-SMD-1" device=""/>
+<part name="RESET" library="SMD-SWITCH-1" deviceset="SWCH-SMD-1" device=""/>
 <part name="AN1" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA03-1" device="" package3d_urn="urn:adsk.eagle:package:8339/1"/>
 <part name="AN2" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA03-1" device="" package3d_urn="urn:adsk.eagle:package:8339/1"/>
 <part name="AN3" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA03-1" device="" package3d_urn="urn:adsk.eagle:package:8339/1"/>
