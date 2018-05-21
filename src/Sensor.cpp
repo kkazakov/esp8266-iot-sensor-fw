@@ -12,7 +12,7 @@ boolean connect;
 boolean hasSensor = true;
 
 // set this (via setting or here to sleep mode = true in order to deep sleep)
-boolean sleepMode = false;
+boolean sleepMode = true;
 
 long lastConnectTry = 0;
 
@@ -37,15 +37,6 @@ void setup () {
   Serial.println();
   Serial.println(FW_VERSION);
 
-  SPIFFS.begin();
-
-  Dir dir = SPIFFS.openDir("/");
-  while (dir.next()) {
-    String fileName = dir.fileName();
-    size_t fileSize = dir.fileSize();
-    Serial.printf("FS File: %s, size: %s\n", fileName.c_str(), String(fileSize).c_str());
-  }
-  Serial.println();
 
   pinMode(CLR_BTN, INPUT);
 
@@ -53,6 +44,8 @@ void setup () {
 
   if (digitalRead(CLR_BTN) == LOW) {
     Serial.println("CLR PRESSED!!!");
+
+    sleepMode = false; // we do not want to sleep.
 
     delay(5000);
     // depressed within 5 seconds? start web server
@@ -89,6 +82,19 @@ void setup () {
     }
 
   }
+
+/*
+  if (!sleepMode) {
+      SPIFFS.begin();
+      Dir dir = SPIFFS.openDir("/");
+      while (dir.next()) {
+        String fileName = dir.fileName();
+        size_t fileSize = dir.fileSize();
+        Serial.printf("FS File: %s, size: %s\n", fileName.c_str(), String(fileSize).c_str());
+      }
+      Serial.println();
+  }
+*/
 
   Wire.begin(2, 0);
   delay(20);
