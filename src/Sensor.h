@@ -22,6 +22,7 @@
 
 #include "Settings.h"
 #include "OpenSenseMap/Sender.h"
+#include "ThingSpeak/ThingSpeak.h"
 #include "WebServer.h"
 #include "Wifi.h"
 #include "OpenSenseMap.h"
