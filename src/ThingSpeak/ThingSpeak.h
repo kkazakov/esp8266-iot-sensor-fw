@@ -5,7 +5,6 @@
 #include <String.h>
 #include <WiFiClient.h>
 
-void thingSpeakSend(float measurement, String writeAPIKey, String fieldName);
-void waitForServerResponse();
+void thingSpeakSend(float measurement, int digits, String writeAPIKey, String fieldName);
 
 #endif

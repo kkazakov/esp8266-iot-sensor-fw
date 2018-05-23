@@ -21,6 +21,10 @@ void startWebServer() {
     webServer.on("/osmsave", handleOSMSave);
     webServer.on("/osmsaved", handleOSMSaved);
 
+    webServer.on("/ts", handleTS);
+    webServer.on("/tssave", handleTSSave);
+    webServer.on("/tssaved", handleTSSaved);
+
     webServer.serveStatic("/beauter.min.css", SPIFFS, "/beauter.min.css");
     webServer.serveStatic("/beauter.min.js", SPIFFS, "/beauter.min.js");
     webServer.serveStatic("/custom.js", SPIFFS, "/custom.js");
@@ -52,7 +56,13 @@ String getTopNav(const String& page) {
   if (page == "osm") {
     s = s + String(" class=\"active\"");
   }
-  s = s + String(">OpenSenseMap</a></li>\n\t\t\t<li style=\"float:right;\"><a href=\"javascript:askRebootFirmware();\" >Restart</a></li>\n\t\t\t<li class=\"-icon\">\n\t\t\t\t<a href=\"javascript:void(0);\" onclick=\"topnav('myTopnav2')\">☰</a>\n\t\t\t</li>\n\n\t\t</ul>");
+  s = s + String(">OpenSenseMap</a></li>\n\t\t\t<li><a href=\"/ts\"");
+  if (page == "ts") {
+    s = s + String(" class=\"active\"");
+  }
+  s = s + String(">ThingSpeak</a></li>\n\t\t\t");
+
+  s = s + String("<li style=\"float:right;\"><a href=\"javascript:askRebootFirmware();\" >Restart</a></li>\n\t\t\t<li class=\"-icon\">\n\t\t\t\t<a href=\"javascript:void(0);\" onclick=\"topnav('myTopnav2')\">☰</a>\n\t\t\t</li>\n\n\t\t</ul>");
   return s;
 }
 
@@ -261,6 +271,70 @@ void handleOSMSave() {
 void handleOSMSaved() {
   configSaved = true;
   if (!ESPTemplateProcessor(webServer).send(String("/osm.html"), osmProcessor)) {
+    webServer.send(200, "text/plain", "page not found.");
+  }
+}
+
+
+String tsProcessor(const String& key) {
+
+  String output = defaultProcessor(key, "ts");
+
+  if (output != "") {
+    return output;
+  }
+
+  if (key == "CONFIG_SAVED") {
+    if (configSaved) {
+      configSaved = false;
+      return "<div class='alert _success'>ThingSpeak configuration saved. Please, restart to apply.</div>";
+    } else {
+      return "&nbsp;";
+    }
+  }
+
+  if (key == "API_KEY") {
+    return getThingSpeakAPIKey();
+  }
+  if (key == "TEMPERATURE") {
+    return getThingSpeakTemperatureField();
+  }
+  if (key == "HUMIDITY") {
+    return getThingSpeakHumidityField();
+  }
+  if (key == "PRESSURE") {
+    return getThingSpeakPressureField();
+  }
+
+  return key;
+
+}
+
+void handleTS() {
+  loadThingSpeakSettings();
+  if (!ESPTemplateProcessor(webServer).send(String("/ts.html"), tsProcessor)) {
+    webServer.send(200, "text/plain", "page not found.");
+  }
+}
+
+
+void handleTSSave() {
+  Serial.println("Client accessed /tssave");
+
+  saveThingSpeakSettings(webServer.arg("a"), webServer.arg("t"), webServer.arg("h"), webServer.arg("p"));
+
+  webServer.sendHeader("Location", "/tssaved", true);
+  webServer.sendHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+  webServer.sendHeader("Pragma", "no-cache");
+  webServer.setContentLength(CONTENT_LENGTH_UNKNOWN);
+  webServer.sendHeader("Expires", "-1");
+  webServer.send ( 302, "text/plain", "");
+  webServer.client().stop();
+}
+
+void handleTSSaved() {
+  configSaved = true;
+  if (!ESPTemplateProcessor(webServer).send(String("/ts.html"), tsProcessor)) {
     webServer.send(200, "text/plain", "page not found.");
   }
 }

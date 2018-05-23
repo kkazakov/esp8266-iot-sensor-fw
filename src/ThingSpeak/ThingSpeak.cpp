@@ -3,14 +3,17 @@
 const char * thingSpeakServer = "api.thingspeak.com";
 
 // 12.01 , XYZ, field1
-void thingSpeakSend(float measurement, String writeAPIKey, String fieldName) {
+void thingSpeakSend(float measurement, int digits, String writeAPIKey, String fieldName) {
 
   WiFiClient client;
 
   if (client.connect(thingSpeakServer, 80)) {
 
+      char obs[10];
+      dtostrf(measurement, 5, digits, obs);
+
       // Construct API request body
-      String body = String(fieldName) + "=" + String(measurement);
+      String body = String(fieldName) + "=" + String(obs);
 
       client.println("POST /update HTTP/1.1");
       client.println("Host: api.thingspeak.com");

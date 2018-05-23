@@ -1,5 +1,5 @@
-#ifndef OPENSENSEMAP_H
-#define OPENSENSEMAP_H
+#ifndef OPENSENSEMAP_CONFIG_H
+#define OPENSENSEMAP_CONFIG_H
 
 #include <Arduino.h>
 #include <String.h>

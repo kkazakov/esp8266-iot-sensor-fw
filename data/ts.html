@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <title>%TITLE%</title>
+    <link href="/beauter.min.css" rel="stylesheet">
+    <script src="/beauter.min.js"></script>
+    <script src="/custom.js"></script>
+  </head>
+  <body>
+    %NAV%
+
+
+    <div class="row" style="margin-top: 50px;">
+      <div class="container">
+
+      	<div class="col m8">
+
+              %CONFIG_SAVED%
+
+              <form method="POST" action="osmsave">
+              <fieldset>
+                <legend>&nbsp;ThingSpeak configuration:&nbsp;</legend>
+
+                <div class="row">
+                  <div class="col m12">
+
+                    <label for="a">Write API Key</label>
+                    <input class="_full-width" type="text" placeholder="" name="a" id="a" value="%API_KEY%">
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col m12">
+
+                    <label for="t">Temperature Sensor field name</label>
+                    <input class="_full-width" type="text" placeholder="" name="t" id="t" placeholder="field1" value="%TEMPERATURE%">
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col m12">
+
+                    <label for="h">Humidity Sensor field name</label>
+                    <input class="_full-width" type="text" placeholder="" name="h" id="h" value="%HUMIDITY%">
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col m12">
+
+                    <label for="p">Pressure Sensor field name</label>
+                    <input class="_full-width" type="text" placeholder="" name="p" id="p" value="%PRESSURE%">
+
+                  </div>
+                </div>
+
+                <input class=" _primary button" type="submit" value="Save configuration">
+                <br>
+              </fieldset>
+              </form>
+
+
+        </div>
+      	<div class="col m6">&nbsp;</div>
+
+      </div>
+    </div>
+  </body>
+</html>

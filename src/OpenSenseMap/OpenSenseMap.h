@@ -6,6 +6,5 @@
 #include <WiFiClient.h>
 
 void openSenseMapSend(float measurement, int digits, String senseBoxId, String sensorId);
-void waitForServerResponse();
 
 #endif

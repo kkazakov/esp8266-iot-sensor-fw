@@ -21,11 +21,12 @@
 #endif
 
 #include "Settings.h"
-#include "OpenSenseMap/Sender.h"
+#include "OpenSenseMap/OpenSenseMap.h"
 #include "ThingSpeak/ThingSpeak.h"
 #include "WebServer.h"
 #include "Wifi.h"
-#include "OpenSenseMap.h"
+#include "OpenSenseMapConfig.h"
+#include "ThingSpeakConfig.h"
 
 void measure();
 void measureAndSend();

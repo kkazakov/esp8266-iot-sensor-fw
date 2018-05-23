@@ -25,8 +25,10 @@ void handleOSM();
 void handleOSMSave();
 void handleOSMSaved();
 
-//void handleCSS();
-//void handleJS();
+
+void handleTS();
+void handleTSSave();
+void handleTSSaved();
 
 bool isIp(String str);
 String toStringIp(IPAddress ip);

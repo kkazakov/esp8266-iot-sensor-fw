@@ -1,4 +1,4 @@
-#include "OpenSenseMap.h"
+#include "OpenSenseMapConfig.h"
 
 int EEPROM_START_POSITION_OSM = 70; // ssid = 32 + passwd = 32 + 3 = OK
 
