@@ -2,10 +2,10 @@
 
 int EEPROM_START_POSITION_TS = 180; // ssid = 32 + passwd = 32 + 3 = OK + 4 x openSenseMap
 
-char thingSpeakWriteKey[26] = "";
-char thingSpeakTemperatureField[26] = "";
-char thingSpeakHumidityField[26] = "";
-char thingSpeakPressureField[26] = "";
+char thingSpeakWriteKey[18] = "";
+char thingSpeakTemperatureField[10] = "";
+char thingSpeakHumidityField[10] = "";
+char thingSpeakPressureField[10] = "";
 
 void loadThingSpeakSettings() {
   EEPROM.begin(512);
@@ -15,7 +15,7 @@ void loadThingSpeakSettings() {
   EEPROM.get(EEPROM_START_POSITION_TS+sizeof(thingSpeakWriteKey)+sizeof(thingSpeakTemperatureField)+sizeof(thingSpeakHumidityField), thingSpeakPressureField);
   EEPROM.end();
 
-  if (strlen(thingSpeakWriteKey) != 24) {
+  if (strlen(thingSpeakWriteKey) != 16) {
     thingSpeakWriteKey[0] = 0;
     thingSpeakTemperatureField[0] = 0;
     thingSpeakHumidityField[0] = 0;

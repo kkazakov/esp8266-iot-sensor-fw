@@ -116,6 +116,7 @@ void setup () {
   connect = hasSSIDConfigured();
 
   loadOpenSenseMapSettings();
+  loadThingSpeakSettings();
 
   if (shouldStartWebServer) {
     startWebServer();
@@ -279,36 +280,64 @@ void measureAndSend() {
 
   if (hasSensor) {
 
-
+    // OpenSenseMap
     String senseBoxId = getOpenSenseBoxId();
 
-    if (senseBoxId.length() == 0) {
+    if (senseBoxId.length() != 0) {
+      #if HAS_BME280
+        Serial.println("BME sensor reading, posting to OpenSenseMap ... ");
+      #else
+        Serial.println("BMP sensor reading, posting to OpenSenseMap ... ");
+      #endif
+
+
+      String tempSensorId = getOpenSenseTemperatureId();
+
+      if (tempSensorId.length() != 0 && temperature > -200 && temperature < 200) {
+        openSenseMapSend(temperature, 1, senseBoxId, tempSensorId);
+      }
+
+      String humiditySensorId = getOpenSenseHumidityId();
+      if (humiditySensorId.length() != 0) {
+        openSenseMapSend(humidity, 1, senseBoxId, humiditySensorId);
+      }
+
+      String pressureSensorId = getOpenSensePressureId();
+      if (pressureSensorId.length() != 0) {
+        openSenseMapSend(pressure, 1, senseBoxId, pressureSensorId);
+      }
+
+    } else {
       Serial.println("OpenSenseMap not configured, skipping ...");
-      return;
     }
 
-    #if HAS_BME280
-      Serial.println("BME sensor reading, posting to OpenSenseMap ... ");
-    #else
-      Serial.println("BMP sensor reading, posting to OpenSenseMap ... ");
-    #endif
+    String thingSpeakWriteKey = getThingSpeakAPIKey();
 
+    if (thingSpeakWriteKey.length() != 0) {
 
-    String tempSensorId = getOpenSenseTemperatureId();
+      #if HAS_BME280
+        Serial.println("BME sensor reading, posting to ThingSpeak ... ");
+      #else
+        Serial.println("BMP sensor reading, posting to ThingSpeak ... ");
+      #endif
 
-    if (tempSensorId.length() != 0 && temperature > -200 && temperature < 200) {
-      openSenseMapSend(temperature, 1, senseBoxId, tempSensorId);
+      String tempSensorField = getThingSpeakTemperatureField();
+      String humiditySensorField = getThingSpeakHumidityField();
+      String pressureSensorField = getThingSpeakPressureField();
+
+      // do not report temperature if weird readings
+      if (tempSensorField.length() == 0 || temperature < -200 || temperature > 200) {
+        tempSensorField = "";
+      }
+
+      thingSpeakSendAll(temperature, tempSensorField, humidity, humiditySensorField, pressure, pressureSensorField, 1, thingSpeakWriteKey);
+
+    } else {
+      Serial.println("ThingSpeak not configured, skipping ...");
     }
 
-    String humiditySensorId = getOpenSenseHumidityId();
-    if (humiditySensorId.length() != 0) {
-      openSenseMapSend(humidity, 1, senseBoxId, humiditySensorId);
-    }
 
-    String pressureSensorId = getOpenSensePressureId();
-    if (pressureSensorId.length() != 0) {
-      openSenseMapSend(pressure, 1, senseBoxId, pressureSensorId);
-    }
+
 
     Serial.println(" done.");
 
