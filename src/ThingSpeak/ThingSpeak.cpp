@@ -2,6 +2,7 @@
 
 const char * thingSpeakServer = "api.thingspeak.com";
 
+/*
 // 12.01 , XYZ, field1
 void thingSpeakSend(float measurement, int digits, String writeAPIKey, String fieldName) {
 
@@ -32,7 +33,7 @@ void thingSpeakSend(float measurement, int digits, String writeAPIKey, String fi
     client.stop();
 
 }
-
+*/
 
 void thingSpeakSendAll(float measurement1, String field1, float measurement2, String field2, float measurement3, String field3, int digits, String writeAPIKey) {
 
@@ -68,6 +69,10 @@ void thingSpeakSendAll(float measurement1, String field1, float measurement2, St
       client.print(body);
 
     }
+
+
+    delay(1000);
+
     client.stop();
 
 }

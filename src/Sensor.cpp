@@ -40,15 +40,7 @@ void setup () {
   Serial.println(FW_VERSION);
 
   SPIFFS.begin();
-  /*
-  Dir dir = SPIFFS.openDir("/");
-  while (dir.next()) {
-    String fileName = dir.fileName();
-    size_t fileSize = dir.fileSize();
-    Serial.printf("FS File: %s, size: %s\n", fileName.c_str(), String(fileSize).c_str());
-  }
-  Serial.println();
-  */
+
   Wire.begin(2, 0);
 
   pinMode(CLR_BTN, INPUT);
