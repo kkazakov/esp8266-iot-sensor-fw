@@ -241,10 +241,9 @@ void measure() {
       Serial.print(h);
       Serial.print(a);
     #else
-      Serial.println("BMP sensor reading, posting to OpenSenseMap ... ");
-      float temperature = bmp.readTemperature();
-      float pressure = bmp.readPressure();
-      float altitude = bmp.readAltitude(103000);
+      temperature = bmp.readTemperature();
+      pressure = bmp.readPressure();
+      altitude = bmp.readAltitude(103000);
       String t = "T=" + String(temperature) + " *C, ";
       String p = "P=" + String(pressure) + " Pa, ";
       String a = "A=" + String(altitude) + " m";
