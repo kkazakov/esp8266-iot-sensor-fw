@@ -1,6 +1,0 @@
-{
-    "terminal.integrated.env.osx": {
-        "PATH": "/Users/wasp/.platformio/penv/bin:/Users/wasp/.platformio/penv:/Users/wasp/flutter/bin:/usr/local/cuda/bin:/usr/local/bin:/usr/local/sbin:/Users/wasp/bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/bin:/Users/wasp/platform-tools/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/MacGPG2/bin",
-        "PLATFORMIO_CALLER": "vscode"
-    }
-}
